@@ -12,9 +12,10 @@
 #==============================================================================
 
 # Get the script directory (for standalone mode, use temp directory)
-if [[ -n "$BASH_SOURCE" ]]; then
+if [[ -n "${BASH_SOURCE[0]}" ]] && [[ "${BASH_SOURCE[0]}" != "bash" ]] && [[ "${BASH_SOURCE[0]}" != "/dev/stdin" ]]; then
     SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 else
+    # Running via curl | bash or similar - use temp directory
     SCRIPT_DIR="/tmp/kronux-$$"
     mkdir -p "$SCRIPT_DIR/logs"
 fi
@@ -54,7 +55,15 @@ KRONUX_REPO_DIR=""
 
 # Non-interactive mode detection
 NON_INTERACTIVE=0
-[[ ! -t 0 ]] && NON_INTERACTIVE=1
+# Detect various non-interactive scenarios
+if [[ ! -t 0 ]] || [[ ! -t 1 ]] || [[ -p /dev/stdin ]]; then
+    NON_INTERACTIVE=1
+fi
+
+# Additional detection for curl | bash scenarios
+if [[ "${BASH_SOURCE[0]}" == "bash" ]] || [[ "${BASH_SOURCE[0]}" == "/dev/stdin" ]] || [[ -z "${BASH_SOURCE[0]}" ]]; then
+    NON_INTERACTIVE=1
+fi
 
 # Hardware detection state (for driver module)
 HAS_INTEL=0
@@ -3955,7 +3964,6 @@ main() {
     select_package_manager
 }
 
-# Run main function if script is executed directly
-if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-    main "$@"
-fi
+# Run main function when script is executed
+# This handles direct execution, curl | bash, and all other scenarios
+main "$@"
