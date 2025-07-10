@@ -7,6 +7,9 @@
 # Standalone version - All modules combined for curl execution
 # Usage: curl -sL https://raw.githubusercontent.com/maulananais/kronux/main/kronux.sh | bash
 
+# Debug output for curl testing
+echo "KRONUX: Starting script..." >&2
+
 #==============================================================================
 # CONFIGURATION
 #==============================================================================
@@ -56,15 +59,14 @@ KRONUX_REPO_DIR=""
 NON_INTERACTIVE=0
 [[ ! -t 0 ]] && NON_INTERACTIVE=1
 
+# Debug NON_INTERACTIVE detection
+echo "KRONUX: NON_INTERACTIVE=$NON_INTERACTIVE" >&2
+
 # Hardware detection state (for driver module)
 HAS_INTEL=0
 HAS_NVIDIA=0
 HAS_AMD=0
 IS_INTEL_NEW=0
-
-# Non-interactive mode detection
-NON_INTERACTIVE=0
-[[ ! -t 0 ]] && NON_INTERACTIVE=1
 
 #==============================================================================
 # UTILITY FUNCTIONS
