@@ -8,25 +8,28 @@
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Shell](https://img.shields.io/badge/language-bash-green.svg)]()
-[![Version](https://img.shields.io/badge/version-2.0-orange.svg)]()
+[![Version](https://img.shields.io/badge/version-2.0_Standalone-orange.svg)]()
 [![GitHub stars](https://img.shields.io/github/stars/maulananais/kronux?logo=github&style=flat)](https://github.com/maulananais/kronux/stargazers)
 [![GitHub issues](https://img.shields.io/github/issues/maulananais/kronux?logo=github&style=flat)](https://github.com/maulananais/kronux/issues)
 [![Repository](https://img.shields.io/badge/repo-kronux-blue?logo=folder&style=flat)](https://github.com/maulananais/kronux)
 
 ## 🚀 Features
 
-- **Modular Bash architecture** — Easy to extend and debug
+- **Standalone & Modular** — Complete 3,800+ line standalone script OR modular architecture
+- **Auto Repository Management** — Automatically installs Git and clones repository on first run
+- **170+ Applications** — Comprehensive package mappings across all categories
 - **CLI-first UX** — Dynamic selection, spinners, and logs
 - **App installer & uninstaller** — Toggle packages by number selection
 - **Graphics Driver Support** — Automatic hardware detection and driver installation
 - **Hardware Acceleration** — Support for VA-API, VDPAU, and multimedia codecs
+- **Special Installation Functions** — 17+ custom installers for complex applications
+- **Communication Apps** — Discord, Slack, Teams, WhatsApp, Signal, Element, and more
+- **Productivity Suite** — Notion, Obsidian, Todoist, Zettlr, Evernote support
 - **Clean terminal views** — Clear and focused menus
 - **Logging enabled** — `logs/install-log.txt` and `logs/uninstall-log.txt` auto-created
 - **Multi-distro support** — `apt`, `dnf`, `yay`, `zypper`
 - **Fast back-navigation** — Via `[0] Back` or `back` keyword
-- **Runs standalone** — Via `curl` or `git clone` style
 - **Advanced uninstaller** — Risk assessment and smart filtering
-- **Special package support** — Chrome, VSCode, Discord, Docker, etc.
 
 ## 📸 Screenshots / Demo
 
@@ -41,7 +44,19 @@
 
 ## 💻 Installation
 
-### 🧩 Clone via Git
+### 🚀 Standalone Script (Recommended)
+```bash
+curl -sL https://raw.githubusercontent.com/maulananais/kronux/main/kronux.sh | bash
+```
+**Features of the standalone script:**
+- ✅ **Complete 3,800+ line script** — All functionality in one file
+- ✅ **Auto Git Installation** — Installs Git if not present
+- ✅ **Auto Repository Cloning** — Downloads full repository for documentation and updates
+- ✅ **170+ Application Support** — Complete package mappings across all categories
+- ✅ **17+ Special Installers** — Custom installation methods for complex applications
+- ✅ **Exit Location Display** — Shows repository location when exiting
+
+### 🧩 Clone via Git (Development)
 ```bash
 git clone https://github.com/maulananais/kronux.git
 cd kronux
@@ -49,11 +64,11 @@ chmod +x main.sh
 ./main.sh
 ```
 
-### ☁️ Run via curl (Experimental)
+### ☁️ Run Standalone Script (Recommended)
 ```bash
-curl -sL https://raw.githubusercontent.com/maulananais/kronux/main/main.sh | bash
+curl -sL https://raw.githubusercontent.com/maulananais/kronux/main/kronux.sh | bash
 ```
-> ⚠️ **Note:** Some features like persistent logging may not be available unless the repo is cloned.
+> ✅ **Complete Experience:** The standalone script automatically clones the repository and provides full functionality.
 
 ## 🔧 Requirements
 
@@ -66,14 +81,18 @@ curl -sL https://raw.githubusercontent.com/maulananais/kronux/main/main.sh | bas
 
 ## 💡 Why KRONUX?
 
-**KRONUX was built to reduce Linux setup fatigue.**
+**KRONUX was built to reduce Linux setup fatigue and provide a comprehensive toolkit for any Linux user.**
 
-Whether you're a distrohopper, sysadmin, or daily driver user — you deserve a fast, clean, and repeatable setup flow.
+Whether you're a distrohopper, sysadmin, developer, or daily driver user — you deserve a fast, clean, and repeatable setup flow that covers everything you need.
 
-- ✅ **No fluff, no dependencies, no clutter**
-- ✅ **Works offline** (once cloned)
-- ✅ **Clean UI, structured logs, minimal design**
-- ✅ **Just Bash** — nothing else
+- ✅ **170+ Applications** — From browsers to development tools to communication apps
+- ✅ **One-Command Installation** — `curl -sL https://... | bash` and you're done
+- ✅ **Auto Repository Management** — Git installation and repository cloning built-in
+- ✅ **No fluff, no dependencies, no clutter** — Pure Bash, maximum compatibility
+- ✅ **Works offline** (once cloned) — Perfect for air-gapped systems
+- ✅ **Clean UI, structured logs, minimal design** — Professional and user-friendly
+- ✅ **Cross-Distribution** — Ubuntu, Fedora, Arch, openSUSE, and more
+- ✅ **Special Installation Support** — Complex applications like Chrome, VSCode, Discord handled automatically
 
 ## 🛡️ Advanced Features
 
@@ -92,14 +111,25 @@ Whether you're a distrohopper, sysadmin, or daily driver user — you deserve a 
 - **Smart Filtering** — Separates safe, risky, and critical applications
 - **Multiple Modes** — Manual selection, clean uninstall, system scan
 
-### **Special Package Support**
-- **Google Chrome** — Official repository setup for all distributions
-- **Microsoft Edge** — Official repository setup for all distributions
-- **Brave Browser** — Official repository setup for all distributions
-- **Visual Studio Code** — Official repository setup for all distributions
-- **Discord** — Direct download with format detection
-- **Docker** — Complete installation with user group setup
-- **Flatpak** — Installation with Flathub repository configuration
+### **Application Categories (170+ Apps)**
+- **Developer Tools (20 apps)** — VS Code, VSCodium, Git, Docker, Node.js, Python, and more
+- **Web Browsers (10 apps)** — Chrome, Firefox, Brave, Edge, Opera, Vivaldi, Tor, and more
+- **Multimedia Tools (14 apps)** — VLC, GIMP, Blender, OBS Studio, Kdenlive, and more
+- **Communication Apps (14 apps)** — Discord, Slack, Teams, WhatsApp, Signal, Element, Zoom, and more
+- **System Tools (21 apps)** — htop, btop, neofetch, gparted, timeshift, and more
+- **Productivity Apps (18 apps)** — LibreOffice, Notion, Obsidian, Todoist, Zettlr, Evernote, and more
+- **Audio Drivers (12 packages)** — ALSA, PulseAudio, PipeWire, JACK, Ardour, and more
+- **System Tweaks (12 options)** — TLP, ZRAM, CPU Governor, GRUB timeout, and more
+- **System Cleanup (12 tools)** — Cache cleaning, orphaned packages, log files, and more
+
+### **Special Installation Functions (17 Apps)**
+Applications with custom installation methods:
+- **Browsers:** Google Chrome, Microsoft Edge, Brave Browser
+- **Development:** Visual Studio Code, Docker
+- **Communication:** Discord, Slack, Zoom, WhatsApp, Teams, Signal, Element
+- **Productivity:** Notion
+- **Entertainment:** Spotify, Steam
+- **System:** Flatpak, Snap
 
 ### **Hardware Acceleration Support**
 - **Intel GPUs** — Intel Media Driver (new) and VA Driver (legacy) support
@@ -118,21 +148,22 @@ Whether you're a distrohopper, sysadmin, or daily driver user — you deserve a 
 ## 📁 Project Structure
 
 ```
-├── main.sh                  # Main entry point
+├── kronux.sh               # 🚀 STANDALONE SCRIPT (3,800+ lines, complete functionality)
+├── main.sh                 # Main entry point for modular version
 ├── config/
-│   └── config.sh           # Configuration and global variables
+│   └── config.sh          # Configuration and global variables
 ├── lib/
-│   └── utils.sh            # Utility functions and common operations
+│   └── utils.sh           # Utility functions and common operations
 ├── modules/
-│   ├── package_manager.sh  # Package manager detection and mapping
-│   ├── actions.sh          # Action handlers (install, uninstall, services)
-│   ├── menus.sh            # Menu system and navigation
-│   ├── uninstaller.sh      # Advanced uninstaller functionality
-│   └── driver.sh           # Graphics driver installation and hardware acceleration
+│   ├── package_manager.sh # Package manager detection and mapping
+│   ├── actions.sh         # Action handlers (install, uninstall, services)
+│   ├── menus.sh          # Menu system and navigation
+│   ├── uninstaller.sh    # Advanced uninstaller functionality
+│   └── driver.sh         # Graphics driver installation and hardware acceleration
 ├── logs/
-│   ├── install-log.txt     # Installation logs
-│   └── uninstall-log.txt   # Uninstallation logs
-├── assets/                 # Images and visual assets
+│   ├── install-log.txt   # Installation logs
+│   └── uninstall-log.txt # Uninstallation logs
+├── assets/               # Images and visual assets
 │   ├── kronux.png
 │   ├── kronux-ascii.png
 │   ├── demo-main_menu.png
@@ -140,6 +171,22 @@ Whether you're a distrohopper, sysadmin, or daily driver user — you deserve a 
 └── docs/
     └── ADVANCED_UNINSTALLER.md
 ```
+
+### 🎯 Standalone vs Modular
+
+**Standalone Script (`kronux.sh`):**
+- ✅ Single file with all functionality
+- ✅ 3,800+ lines of comprehensive code
+- ✅ Auto Git installation and repository cloning
+- ✅ 170+ application support with package mappings
+- ✅ 17+ special installation functions
+- ✅ Perfect for one-command execution
+
+**Modular Version (`main.sh` + modules):**
+- ✅ Organized code structure for development
+- ✅ Easy to extend and debug
+- ✅ Same functionality as standalone
+- ✅ Better for contributors and customization
 
 ## 🤝 Contributing
 
