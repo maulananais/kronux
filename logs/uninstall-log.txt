@@ -3,3 +3,4 @@ Started: Thu Jul 10 03:30:00 AM WIB 2025
 =========================================
 2025-07-10 22:00:23: [UNINSTALL_SUCCESS] snap
 2025-07-10 22:01:54: [UNINSTALL_SUCCESS] snap
+2025-07-10 23:32:41: [UNINSTALL_SUCCESS] google-chrome-stable
