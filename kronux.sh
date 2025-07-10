@@ -55,14 +55,27 @@ KRONUX_REPO_DIR=""
 
 # Non-interactive mode detection
 NON_INTERACTIVE=0
-# Detect various non-interactive scenarios
-if [[ ! -t 0 ]] || [[ ! -t 1 ]] || [[ -p /dev/stdin ]]; then
-    NON_INTERACTIVE=1
-fi
+FORCE_INTERACTIVE=0
 
-# Additional detection for curl | bash scenarios
-if [[ "${BASH_SOURCE[0]}" == "bash" ]] || [[ "${BASH_SOURCE[0]}" == "/dev/stdin" ]] || [[ -z "${BASH_SOURCE[0]}" ]]; then
-    NON_INTERACTIVE=1
+# Check for force-interactive flag
+for arg in "$@"; do
+    if [[ "$arg" == "--interactive" ]] || [[ "$arg" == "-i" ]]; then
+        FORCE_INTERACTIVE=1
+        echo "ℹ Forcing interactive mode due to --interactive flag"
+        break
+    fi
+done
+
+# Detect various non-interactive scenarios (unless forced interactive)
+if [[ $FORCE_INTERACTIVE -eq 0 ]]; then
+    if [[ ! -t 0 ]] || [[ ! -t 1 ]] || [[ -p /dev/stdin ]]; then
+        NON_INTERACTIVE=1
+    fi
+    
+    # Additional detection for curl | bash scenarios
+    if [[ "${BASH_SOURCE[0]}" == "bash" ]] || [[ "${BASH_SOURCE[0]}" == "/dev/stdin" ]] || [[ -z "${BASH_SOURCE[0]}" ]]; then
+        NON_INTERACTIVE=1
+    fi
 fi
 
 # Hardware detection state (for driver module)
@@ -3901,6 +3914,9 @@ main() {
         echo
         echo_info "You are running KRONUX in non-interactive mode."
         echo_info "This typically happens when running via: curl -sL url | bash"
+        echo
+        echo_info "💡 To force interactive mode with curl | bash, use:"
+        echo_info "  ${CYAN}curl -sL url | bash -s -- --interactive${NC}"
         echo
         
         # Initialize basic logging for non-interactive mode
