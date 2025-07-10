@@ -52,11 +52,19 @@ KRONUX_VERSION="2.0"
 KRONUX_REPO_URL="https://github.com/maulananais/kronux.git"
 KRONUX_REPO_DIR=""
 
+# Non-interactive mode detection
+NON_INTERACTIVE=0
+[[ ! -t 0 ]] && NON_INTERACTIVE=1
+
 # Hardware detection state (for driver module)
 HAS_INTEL=0
 HAS_NVIDIA=0
 HAS_AMD=0
 IS_INTEL_NEW=0
+
+# Non-interactive mode detection
+NON_INTERACTIVE=0
+[[ ! -t 0 ]] && NON_INTERACTIVE=1
 
 #==============================================================================
 # UTILITY FUNCTIONS
@@ -3880,6 +3888,48 @@ setup_kronux_repository() {
 
 # Main function
 main() {
+    # Detect if running in non-interactive mode (via curl pipe)
+    if [[ $NON_INTERACTIVE -eq 1 ]]; then
+        # Non-interactive mode - provide information and exit gracefully
+        show_ascii_logo
+        echo_info "KRONUX - Linux Toolkit Successfully Downloaded!"
+        echo
+        echo_info "You are running KRONUX in non-interactive mode."
+        echo_info "This typically happens when running via: curl -sL url | bash"
+        echo
+        
+        # Initialize basic logging for non-interactive mode
+        init_log
+        
+        # Set up repository even in non-interactive mode
+        setup_kronux_repository
+        
+        echo
+        echo_info "To use KRONUX interactively, run:"
+        echo_info "  ${CYAN}bash kronux.sh${NC}"
+        echo
+        echo_info "Or navigate to the repository and explore:"
+        if [[ -n "$KRONUX_REPO_DIR" && -d "$KRONUX_REPO_DIR" ]]; then
+            echo_info "  ${CYAN}cd $KRONUX_REPO_DIR${NC}"
+        else
+            echo_info "  ${CYAN}cd /tmp/kronux-*${NC}"
+        fi
+        echo_info "  ${CYAN}ls -la${NC}"
+        echo
+        echo_info "Features available in interactive mode:"
+        echo_info "  • 📦 Package management (install/uninstall)"
+        echo_info "  • 🎮 Graphics driver installation"
+        echo_info "  • ⚡ Hardware acceleration setup"
+        echo_info "  • 🔧 System utilities and services"
+        echo_info "  • 🗑️  Advanced uninstaller with dependency tracking"
+        echo
+        echo_info "Visit: ${BLUE}https://github.com/maulananais/kronux${NC}"
+        echo_info "Documentation: ${BLUE}https://github.com/maulananais/kronux/blob/main/README.md${NC}"
+        echo
+        exit_toolkit
+    fi
+    
+    # Interactive mode - full functionality
     # Show loading screen
     show_loading_screen
     
