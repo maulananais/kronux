@@ -46,7 +46,7 @@
 
 ### 🚀 Standalone Script (Recommended)
 ```bash
-curl -sL https://raw.githubusercontent.com/maulananais/kronux/main/kronux.sh | bash
+curl -sL https://raw.githubusercontent.com/maulananais/kronux/main/kronux.sh > /tmp/kronux.sh && bash /tmp/kronux.sh
 ```
 **Features of the standalone script:**
 - ✅ **Complete 3,800+ line script** — All functionality in one file
@@ -66,9 +66,26 @@ chmod +x main.sh
 
 ### ☁️ Run Standalone Script (Recommended)
 ```bash
-curl -sL https://raw.githubusercontent.com/maulananais/kronux/main/kronux.sh | bash
+curl -sL https://raw.githubusercontent.com/maulananais/kronux/main/kronux.sh > /tmp/kronux.sh && bash /tmp/kronux.sh
 ```
 > ✅ **Complete Experience:** The standalone script automatically clones the repository and provides full functionality.
+
+## 🎮 Quick Usage
+
+1. **Run the installation command** above
+2. **Select package manager** (auto-detected)
+3. **Navigate menus** using numbers (1, 2, 3...)
+4. **Multi-select packages** by typing space-separated numbers (e.g., `1 3 5`)
+5. **Execute selection** by typing `go`
+6. **Go back** by typing `0` or `back`
+
+**Example Session:**
+```
+[5] App/Driver Modules → [1] Developer Tools → 1 3 5 → go
+```
+*Installs VS Code, Neovim, and Git*
+
+📚 **Need help?** See [DOCUMENTATION.md](DOCUMENTATION.md) for complete usage guide.
 
 ## 🔧 Requirements
 
@@ -86,7 +103,7 @@ curl -sL https://raw.githubusercontent.com/maulananais/kronux/main/kronux.sh | b
 Whether you're a distrohopper, sysadmin, developer, or daily driver user — you deserve a fast, clean, and repeatable setup flow that covers everything you need.
 
 - ✅ **170+ Applications** — From browsers to development tools to communication apps
-- ✅ **One-Command Installation** — `curl -sL https://... | bash` and you're done
+- ✅ **One-Command Installation** — `curl -sL https://... > /tmp/kronux.sh && bash /tmp/kronux.sh` and you're done
 - ✅ **Auto Repository Management** — Git installation and repository cloning built-in
 - ✅ **No fluff, no dependencies, no clutter** — Pure Bash, maximum compatibility
 - ✅ **Works offline** (once cloned) — Perfect for air-gapped systems
@@ -197,7 +214,21 @@ PRs are welcome, especially for new modules or distros.
 
 KRONUX is released under the **MIT License**.
 
-## 📢 Connect & Support
+## � Documentation
+
+📚 **[Complete Documentation](DOCUMENTATION.md)** — Comprehensive usage guide, troubleshooting, and advanced features
+
+**Quick Links:**
+- 🚀 [Installation Methods](DOCUMENTATION.md#-quick-start)
+- 🎮 [Usage Guide](DOCUMENTATION.md#-usage-guide) 
+- 📦 [Package Management](DOCUMENTATION.md#-package-management)
+- 🖥️ [Graphics Drivers](DOCUMENTATION.md#-graphics-drivers)
+- 🗑️ [Advanced Uninstaller](DOCUMENTATION.md#-advanced-uninstaller)
+- 🔍 [Troubleshooting](DOCUMENTATION.md#-troubleshooting)
+
+---
+
+## �📢 Connect & Support
 
 <p align="center">
   <a href="https://instagram.com/mqulqnqq" target="_blank">
