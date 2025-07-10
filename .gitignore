@@ -1,0 +1,27 @@
+# Log files
+logs/*.log
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# System files
+.DS_Store
+Thumbs.db
+
+# User-specific files
+.vscode/settings.json
+.idea/
+
+# Backup files
+*.bak
+*.backup
+
+# Test files
+test/
+*.test
+
+# Local configuration overrides
+config/local.sh
