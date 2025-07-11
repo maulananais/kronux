@@ -2,6 +2,7 @@
 
 # KRONUX - Kernel Runtime Operations for Linux
 # Author: Maulana Nais
+# Version: 2.0
 # Description: Modular system for post-installation setup on various Linux distributions
 
 # Get the script directory
