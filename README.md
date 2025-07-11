@@ -214,7 +214,7 @@ PRs are welcome, especially for new modules or distros.
 
 KRONUX is released under the **MIT License**.
 
-## � Documentation
+## 📝 Documentation
 
 📚 **[Complete Documentation](DOCUMENTATION.md)** — Comprehensive usage guide, troubleshooting, and advanced features
 
@@ -228,7 +228,7 @@ KRONUX is released under the **MIT License**.
 
 ---
 
-## �📢 Connect & Support
+## 📢 Connect & Support
 
 <p align="center">
   <a href="https://instagram.com/mqulqnqq" target="_blank">
